@@ -1,0 +1,27 @@
+img.card-img-top{
+  height: 200px;
+}
+
+
+.card-text{
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-info{
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+}
+
+h1.display-4{
+    font-weight: 600;
+}
+
+p.lead{
+    font-weight: 400;
+}
+
+.navbar-light .navbar-nav .active > .nav-link.active{
+    color: #106f9d;
+}
