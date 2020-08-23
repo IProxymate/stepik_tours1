@@ -2,12 +2,20 @@ from random import sample
 
 from django.shortcuts import render
 from django.views import View
-from django.http import Http404
+from django.http import Http404, HttpResponseNotFound, HttpResponseServerError
 
 from tours.data import tours, departures
 
 
 # Create your views here.
+def custom_handler404(request, exception):
+    return HttpResponseNotFound('Такой страницы не существует =(')
+
+
+def custom_handler500(request):
+    return HttpResponseServerError('Ошибка сервера')
+
+
 class MainView(View):
     def get(self, request, *args, **kwargs):
         random_tours_id = sample(tours.keys(), 6)
